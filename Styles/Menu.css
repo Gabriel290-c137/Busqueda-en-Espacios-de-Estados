@@ -1,0 +1,203 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  color: white;
+}
+
+main {
+  position: relative;
+  bottom: 50px;
+}
+
+/* Logos fijos en esquinas */
+.logo.izquierda {
+  position: fixed;
+  top: 3rem;
+  left: 4rem;
+  width: 100px;
+  z-index: 1;
+}
+
+.logoU.derecha {
+  position: fixed;
+  top: 3rem;
+  right: 4rem;
+  width: 100px;
+  z-index: 1;
+}
+
+/* Títulos */
+.titulo-principal {
+  margin-top: 100px;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  color: #fff;
+  text-shadow: 0 0 8px #00ffff, 0 0 15px #ff00ff;
+  animation: fadeInDown 1s ease-out;
+}
+
+.subtitulo {
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  font-size: 1rem;
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  color: #ccc;
+  text-shadow: 0 0 5px #000;
+  animation: fadeInDown 1.2s ease-out;
+}
+
+/* Video de fondo */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Overlay con gradiente y blur */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.3);
+  z-index: -1;
+}
+
+/* Menú */
+ol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+  z-index: 1;
+  margin-top: 2rem;
+  animation: fadeInUp 1.5s ease-out;
+}
+
+a.btn__ {
+  position: relative;
+  padding: 1.5rem 8rem;
+  background: transparent;
+  width: 70%;
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* Halo radial */
+a.btn__::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(255,255,255,0.8) 0%,
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+a.btn__:hover::before {
+  opacity: 1;
+}
+
+a.btn__:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 6px currentColor, 0 0 12px currentColor;
+}
+
+/* Botones con colores y glow */
+a.btn1 {
+  border: 3px solid white;
+  box-shadow: 0 0 10px white, 0 0 20px white;
+}
+a.btn1::before {
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(255, 255, 255, 0.8) 0%,
+    transparent 45%
+  );
+}
+
+a.btn2 {
+  border: 3px solid #ff4500cc;
+  box-shadow: 0 0 10px #ff4500cc, 0 0 20px #ff6347;
+}
+a.btn2::before {
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    #ff4500cc 0%,
+    transparent 45%
+  );
+}
+
+a.btn3 {
+  border: 3px solid #00bfffcc;
+  box-shadow: 0 0 10px #00bfffcc, 0 0 20px #1e90ff;
+}
+a.btn3::before {
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    #00bfffcc 0%,
+    transparent 45%
+  );
+}
+
+a.btn4 {
+  border: 3px solid #39ff14cc;
+  box-shadow: 0 0 10px #39ff14cc, 0 0 20px #7fff00;
+}
+a.btn4::before {
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    #39ff14cc 0%,
+    transparent 45%
+  );
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Puzzle-8</title>
+  <link rel="stylesheet" href="/Styles/Puzzle-8.css" />
+</head>
+
+<body>
+  <!-- Video de fondo -->
+  <video autoplay muted loop id="bg-video" playsinline>
+    <source src="/Images/Multimedia1.mp4" type="video/mp4" />
+    Tu navegador no soporta videos en HTML5.
+  </video>
+
+  <main>
+    <h1>Juego del 8-Puzzle</h1>
+
+    <!-- Estado del juego -->
+    <div id="game-status">¡Haz clic en desordenar para empezar!</div>
+
+    <!-- Contenedor del puzzle -->
+    <div id="puzzle-board"></div>
+
+    <!-- Botones de control -->
+    <div class="controls">
+      <button id="shuffle">🎲 Desordenar</button>
+      <button id="user-mode">👤 Modo Usuario</button>
+      <button id="ai-mode">🤖 Resolver con IA</button>
+      <button id="reset">🔄 Reiniciar</button>
+      <a href="/Templates/menu.html">← Volver</a>
+    </div>
+  </main>
+
+  <!-- Audio efecto -->
+    <audio id="bg-audio" autoplay loop>
+      <source src="/Sounds/Puzzle.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio en HTML5.
+    </audio>
+  <audio id="menu-sound" src="/Sounds/Menusound4.mp3" preload="auto"></audio>
+  <script src="/Scripts/Puzzle-8.js"></script>
+  <script src="/Scripts/Music/Sountrack.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/Styles/Menu.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="/Images/Title.png" type="image/x-icon">
+  <title>Menú</title>
+</head>
+<body>
+  <main>
+    <!-- Logos fijos -->
+    <img src="/Images/Logo.svg" alt="Logo" class="logo izquierda">
+    <img src="/Images/Escudo.svg" alt="Escudo" class="logoU derecha">
+
+    <!-- Título centrado debajo de los logos -->
+    <h1 class="titulo-principal">Busqueda en Espacios de Estados</h1>
+    <h2 class="subtitulo">[TJA] [T2-2025] [SIS-252] INTELIGENCIA ARTIFICIAL [Par. 1]</h2>
+
+    <!-- Video de fondo -->
+    <video autoplay muted loop id="bg-video">
+      <source src="/Images/Multimedia1.mp4" type="video/mp4">
+      Tu navegador no soporta videos en HTML5.
+    </video>
+  
+    <!-- Menú -->
+    <ol>
+      <a href="/Templates/puzzle-8.html" class="btn__ btn1" data-bg="/Images/Multimedia1.mp4">Puzzle-8</a>
+      <a href="/Templates/prueba1.html" class="btn__ btn2" data-bg="/Images/Multimedia2.mp4">2</a>
+      <a href="#" class="btn__ btn3" data-bg="/Images/Multimedia3.mp4">3</a>
+      <a href="#" class="btn__ btn4" data-bg="/Images/Multimedia4.mp4">4</a>
+    </ol>
+  </main>
+
+  <!-- Audio de fondo -->
+  <audio id="bg-audio" autoplay loop>
+    <source src="/Sounds/Main.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio en HTML5.
+  </audio>
+
+  <!-- Audio efecto menú -->
+  <audio id="menu-sound" src="/Sounds/Menusound4.mp3" preload="auto"></audio>
+
+  <script src="/Scripts/MenuDinamico/MenuDinamico.js"></script>
+  <script src="/Scripts/Efectos/Botones.js"></script>
+  <script src="/Scripts/Efectos/EfectoBoton.js"></script>
+  <script src="/Scripts/Music/Sountrack.js"></script>
+</body>
+</html>

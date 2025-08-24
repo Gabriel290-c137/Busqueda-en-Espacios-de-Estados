@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Styles/Sudoku.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>Test Sudoku - PSSR</title>
+</head>
+<body>
+  <!-- Video de fondo -->
+  <video autoplay muted loop id="bg-video">
+    <source src="Images/Sudoku.mp4" type="video/mp4">
+    Tu navegador no soporta videos en HTML5.
+  </video>
+
+  <main>
+    <!-- Header -->
+    <div class="header">
+      <div style="width: 50px; height: 50px; background: #FFD700; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: black; font-size: 8px;">LOGO</div>
+      <h1 class="titulo-principal">Sudoku - PSSR</h1>
+      <div style="width: 50px; height: 50px; background: #FFD700; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: black; font-size: 6px;">ESCUDO</div>
+    </div>
+
+    <div class="subtitle">Problem Solving by Search and Reasoning</div>
+
+    <!-- Controles -->
+    <div class="controles">
+      <div class="algoritmos">
+        <h3>Algoritmos CSP</h3>
+        <button id="btn-backtracking" class="btn-algoritmo">Backtracking</button>
+        <button id="btn-forward-checking" class="btn-algoritmo">Forward Checking</button>
+        <button id="btn-arc-consistency" class="btn-algoritmo">Arc Consistency</button>
+      </div>
+      
+      <div class="acciones">
+        <button id="btn-generar" class="btn-accion">Generar Sudoku</button>
+        <button id="btn-resolver" class="btn-accion">Resolver</button>
+        <button id="btn-limpiar" class="btn-accion">Limpiar</button>
+        <button id="btn-validar" class="btn-accion">Validar</button>
+        <button id="btn-menu" class="btn-accion" onclick="alert('Menú funcionando!')">Test Menú</button>
+      </div>
+    </div>
+
+    <!-- Panel de información -->
+    <div class="info-panel">
+      <div class="stats">
+        <span id="pasos-ejecutados">Pasos: 0</span>
+        <span id="backtrack-count">Backtracks: 0</span>
+        <span id="tiempo-resolucion">Tiempo: 0ms</span>
+        <span id="dificultad">Dificultad: Fácil</span>
+      </div>
+      <div id="algoritmo-info" class="algoritmo-descripcion">
+        Selecciona un algoritmo para ver su descripción
+      </div>
+    </div>
+
+    <!-- Contenedor del Sudoku -->
+    <div class="sudoku-container">
+      <div id="sudoku-grid" class="sudoku-grid">
+        <!-- Las celdas se generarán dinámicamente -->
+      </div>
+    </div>
+
+    <!-- Leyenda y controles de dificultad -->
+    <div class="controles-extra">
+      <div class="dificultad">
+        <h4>Dificultad:</h4>
+        <button id="facil" class="btn-dificultad active">Fácil</button>
+        <button id="medio" class="btn-dificultad">Medio</button>
+        <button id="dificil" class="btn-dificultad">Difícil</button>
+        <button id="experto" class="btn-dificultad">Experto</button>
+      </div>
+      
+      <div class="leyenda">
+        <div class="leyenda-item">
+          <div class="color-muestra inicial"></div>
+          <span>Pistas iniciales</span>
+        </div>
+        <div class="leyenda-item">
+          <div class="color-muestra solucion"></div>
+          <span>Solución</span>
+        </div>
+        <div class="leyenda-item">
+          <div class="color-muestra error"></div>
+          <span>Error</span>
+        </div>
+        <div class="leyenda-item">
+          <div class="color-muestra procesando"></div>
+          <span>Procesando</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="Scripts/Sudoku.js"></script>
+</body>
+</html>

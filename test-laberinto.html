@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Styles/Laberinto.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>Test Laberinto - Búsqueda en Espacios de Estados</title>
+</head>
+<body>
+  <!-- Video de fondo -->
+  <video autoplay muted loop id="bg-video">
+    <source src="Images/Laberinto.mp4" type="video/mp4">
+    Tu navegador no soporta videos en HTML5.
+  </video>
+
+  <main>
+    <!-- Header -->
+    <div class="header">
+      <div style="width: 60px; height: 60px; background: #FFD700; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: black; font-size: 10px;">LOGO</div>
+      <h1 class="titulo-principal">Laberinto</h1>
+      <div style="width: 60px; height: 60px; background: #FFD700; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: black; font-size: 8px;">ESCUDO</div>
+    </div>
+
+    <!-- Controles -->
+    <div class="controles">
+      <div class="algoritmos">
+        <h3>Algoritmos de Búsqueda</h3>
+        <button id="btn-bfs" class="btn-algoritmo">BFS (Breadth-First Search)</button>
+        <button id="btn-dfs" class="btn-algoritmo">DFS (Depth-First Search)</button>
+        <button id="btn-astar" class="btn-algoritmo">A* (A-Star)</button>
+      </div>
+      
+      <div class="acciones">
+        <button id="btn-generar" class="btn-accion">Generar Laberinto</button>
+        <button id="btn-limpiar" class="btn-accion">Limpiar Camino</button>
+        <button id="btn-reset" class="btn-accion">Reset</button>
+        <button id="btn-menu" class="btn-accion" onclick="alert('Botón menú funcionando!')">Test Menú</button>
+      </div>
+    </div>
+
+    <!-- Información del algoritmo -->
+    <div class="info-panel">
+      <div class="stats">
+        <span id="nodos-visitados">Nodos visitados: 0</span>
+        <span id="longitud-camino">Longitud del camino: 0</span>
+        <span id="tiempo-ejecucion">Tiempo: 0ms</span>
+      </div>
+      <div id="algoritmo-info" class="algoritmo-descripcion">
+        Selecciona un algoritmo para ver su descripción
+      </div>
+    </div>
+
+    <!-- Laberinto -->
+    <div class="laberinto-container">
+      <canvas id="laberinto-canvas" width="400" height="400"></canvas>
+    </div>
+
+    <!-- Leyenda -->
+    <div class="leyenda">
+      <div class="leyenda-item">
+        <div class="color-muestra inicio"></div>
+        <span>Inicio</span>
+      </div>
+      <div class="leyenda-item">
+        <div class="color-muestra meta"></div>
+        <span>Meta</span>
+      </div>
+      <div class="leyenda-item">
+        <div class="color-muestra pared"></div>
+        <span>Pared</span>
+      </div>
+      <div class="leyenda-item">
+        <div class="color-muestra visitado"></div>
+        <span>Visitado</span>
+      </div>
+      <div class="leyenda-item">
+        <div class="color-muestra camino"></div>
+        <span>Camino</span>
+      </div>
+    </div>
+  </main>
+
+  <script src="Scripts/Laberinto.js"></script>
+</body>
+</html>

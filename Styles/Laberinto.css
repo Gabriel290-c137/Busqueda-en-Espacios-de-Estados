@@ -1,0 +1,308 @@
+/* Estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  min-height: 100vh;
+  overflow-x: auto;
+  position: relative;
+}
+
+/* Video de fondo */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -2;
+  object-fit: cover;
+}
+
+/* Overlay para mejorar legibilidad */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+main {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+}
+
+.titulo-principal {
+  font-size: 20px;
+  text-align: center;
+  text-shadow: 3px 3px 0px #000;
+  color: #FFD700;
+}
+
+/* Controles */
+.controles {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.algoritmos, .acciones {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.algoritmos h3 {
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #FFD700;
+  text-shadow: 2px 2px 0px #000;
+}
+
+.btn-algoritmo, .btn-accion {
+  padding: 8px 16px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 8px;
+  border: 3px solid #fff;
+  background: linear-gradient(45deg, #4CAF50, #45a049);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 4px 4px 0px #000;
+  min-width: 180px;
+}
+
+.btn-algoritmo:hover, .btn-accion:hover {
+  background: linear-gradient(45deg, #45a049, #4CAF50);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000;
+}
+
+.btn-algoritmo.active {
+  background: linear-gradient(45deg, #FF6B6B, #ee5a52);
+  border-color: #FFD700;
+}
+
+.btn-accion {
+  background: linear-gradient(45deg, #2196F3, #1976D2);
+}
+
+.btn-accion:hover {
+  background: linear-gradient(45deg, #1976D2, #2196F3);
+}
+
+/* Panel de información */
+.info-panel {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #FFD700;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  font-size: 8px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stats span {
+  color: #FFD700;
+  text-shadow: 1px 1px 0px #000;
+}
+
+.algoritmo-descripcion {
+  font-size: 7px;
+  line-height: 1.5;
+  text-align: center;
+  color: #fff;
+}
+
+/* Contenedor del laberinto */
+.laberinto-container {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  border: 3px solid #FFD700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+#laberinto-canvas {
+  border: 2px solid #fff;
+  background: #000;
+  cursor: crosshair;
+}
+
+/* Leyenda */
+.leyenda {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #FFD700;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.leyenda-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 7px;
+}
+
+.color-muestra {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #fff;
+}
+
+.color-muestra.inicio {
+  background: #00FF00;
+}
+
+.color-muestra.meta {
+  background: #FF0000;
+}
+
+.color-muestra.pared {
+  background: #000;
+}
+
+.color-muestra.visitado {
+  background: #FFFF00;
+}
+
+.color-muestra.camino {
+  background: #FF69B4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .titulo-principal {
+    font-size: 16px;
+  }
+
+  .controles {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .btn-algoritmo, .btn-accion {
+    min-width: 250px;
+    font-size: 9px;
+  }
+
+  #laberinto-canvas {
+    width: 90vw;
+    height: 90vw;
+    max-width: 500px;
+    max-height: 500px;
+  }
+
+  .stats {
+    font-size: 8px;
+  }
+
+  .leyenda {
+    gap: 15px;
+  }
+}
+
+/* Media query adicional para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .logo {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .titulo-principal {
+    font-size: 14px;
+  }
+  
+  .header {
+    gap: 10px;
+  }
+}
+
+/* Media query para pantallas medianas */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .logo {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Animaciones */
+@keyframes pulso {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.btn-algoritmo.active {
+  animation: pulso 1s infinite;
+}
+
+/* Efectos de hover para canvas */
+#laberinto-canvas:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tres en Raya – Minimax</title>
+  <link rel="stylesheet" href="/Styles/Tictactoe.css" />
+</head>
+<body>
+
+  <!-- Fondo opcional -->
+  <video autoplay muted loop id="bg-video" playsinline>
+    <source src="/Images/Multimedia4.mp4" type="video/mp4" />
+    Tu navegador no soporta videos en HTML5.
+  </video>
+
+  <main>
+    <h1>Tic - tac - toe</h1>
+
+    <div id="board">
+      <div class="cell" data-index="0"></div>
+      <div class="cell" data-index="1"></div>
+      <div class="cell" data-index="2"></div>
+      <div class="cell" data-index="3"></div>
+      <div class="cell" data-index="4"></div>
+      <div class="cell" data-index="5"></div>
+      <div class="cell" data-index="6"></div>
+      <div class="cell" data-index="7"></div>
+      <div class="cell" data-index="8"></div>
+    </div>
+
+    <div id="result" class="hidden"></div>
+
+    <div id="controls">
+      <button id="startBtn">Jugar vs IA</button>
+      <button id="autoBtn">Ver IA vs IA</button>
+      <button id="resetBtn">Reiniciar</button>
+      <button id="menuBtn">Volver al menú</button>
+    </div>
+  </main>
+
+  <script src="/Scripts/Tictactoe.js"></script>
+    <audio id="bg-audio" autoplay loop>
+      <source src="/Sounds/Puzzle.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio en HTML5.
+    </audio>
+  <audio id="menu-sound" src="/Sounds/Menusound4.mp3" preload="auto"></audio>
+  <script src="/Scripts/Puzzle-8.js"></script>
+  <script src="/Scripts/Music/Sountrack.js"></script>
+</body>
+</html>

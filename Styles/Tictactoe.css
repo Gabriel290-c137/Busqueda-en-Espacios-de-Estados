@@ -1,0 +1,30 @@
+:root { --gap: .75rem; }
+* { box-sizing: border-box; }
+body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; color:#fff; }
+main { position: relative; min-height: 100dvh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap: 1rem; padding: 1.5rem; backdrop-filter: saturate(140%) contrast(105%); }
+
+/* Fondo de video opcional */
+#bg-video { position: fixed; inset:0; width:100%; height:100%; object-fit:cover; z-index:-1; filter: brightness(.45) saturate(120%); }
+
+h1 { margin:0 0 .5rem 0; font-weight:700; letter-spacing:.5px; text-shadow:0 1px 12px rgba(0,0,0,.45); }
+
+h1 {
+  margin-bottom: 35px; /* Ajusta el valor según el espacio que quieras */
+  text-align: center; /* Opcional si quieres centrar el título */
+  color: white; /* Si el fondo es oscuro por el video */
+}
+
+#board { display:grid; grid-template-columns: repeat(3, min(18vmin,120px)); grid-template-rows: repeat(3, min(18vmin,120px)); gap: .6rem; }
+.cell { display:grid; place-items:center; border:2px solid rgba(255,255,255,.55); border-radius:1rem; font-size: clamp(2.2rem, 8vmin, 3rem); font-weight:700; width: min(18vmin,120px); height: min(18vmin,120px); cursor:pointer; user-select:none; background: rgba(255,255,255,.06); box-shadow: 0 8px 20px rgba(0,0,0,.25) inset, 0 6px 18px rgba(0,0,0,.2); transition: transform .08s ease, background .2s ease, border-color .2s ease; }
+.cell:hover { transform: translateY(-2px); background: rgba(255,255,255,.12); }
+.cell.taken { cursor: not-allowed; opacity:.95; }
+
+#result { min-height: 1.8rem; font-size: 1.05rem; font-weight:600; text-align:center; text-shadow:0 1px 10px rgba(0,0,0,.35); }
+.hidden { visibility:hidden; }
+
+#controls { display:flex; flex-wrap: wrap; gap: var(--gap); margin-top: .25rem; justify-content:center; align-items:center; }
+#controls button { appearance:none; border:none; padding:.7rem 1rem; border-radius: 999px; font-weight:700; letter-spacing:.2px; cursor:pointer; background:rgba(255,255,255,.12); color:#fff; box-shadow:0 4px 16px rgba(0,0,0,.25); backdrop-filter: blur(6px); transition: transform .08s ease, background .2s ease, opacity .2s ease; }
+#controls button:hover { transform: translateY(-2px); background: rgba(255,255,255,.2); }
+#controls button:disabled { opacity:.45; cursor:not-allowed; }
+
+.subtle { opacity:.8; font-weight:500; font-size:.95rem; }

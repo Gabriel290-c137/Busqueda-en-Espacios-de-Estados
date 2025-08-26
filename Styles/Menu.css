@@ -201,3 +201,49 @@ a.btn4::before {
   from {opacity: 0; transform: translateY(20px);}
   to {opacity: 1; transform: translateY(0);}
 }
+
+/* 📱 Responsivo para móviles promedio */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 0 1rem;
+  }
+
+  /* Logos más pequeños y cerca de las esquinas */
+  .logo.izquierda, 
+  .logoU.derecha {
+    width: 60px;
+    top: 1rem;
+  }
+
+  .logo.izquierda {
+    left: 1rem;
+  }
+
+  .logoU.derecha {
+    right: 1rem;
+  }
+
+  /* Títulos más compactos */
+  .titulo-principal {
+    font-size: 1.4rem;
+    margin-top: 60px;
+  }
+
+  .subtitulo {
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Botones ocupan más ancho y se ven parejos */
+  ol {
+    width: 100%;
+    gap: 1.2rem;
+  }
+
+  a.btn__ {
+    width: 90%;
+    max-width: 300px;
+    padding: 1rem 2rem;
+    font-size: 0.9rem;
+  }
+}

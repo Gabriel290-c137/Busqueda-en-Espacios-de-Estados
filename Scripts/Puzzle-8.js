@@ -221,7 +221,7 @@ class OptimizedPuzzle8 {
     
     this.isAnimating = false;
     this.board.classList.remove('solving');
-    this.statusEl.textContent = `¡Resuelto por IA en ${path.length} movimientos óptimos!`;
+    this.statusEl.textContent = `¡Resuelto por A* en ${path.length} movimientos óptimos!`;
   }
 
   // Verificar si ganó
